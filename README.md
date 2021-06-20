@@ -1,6 +1,13 @@
 # Groot
 OSS(Object Storage Service) SDK SpringBoot Starters for Cloud services.
 
+## Contributing
+If you're interested in fixing issues or contributing to the codebase 
+directly, pleas visit the [Contributor Guidelines](CONTRIBUTING.md) 
+for details on how to contribute as well as the 
+[Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md) 
+for details on how to participate. 
+
 ## License
 Copyright (c) 2021-present deepinthink. All rights reserved.
 
