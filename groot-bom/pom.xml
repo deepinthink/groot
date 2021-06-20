@@ -13,4 +13,28 @@
   <artifactId>groot-bom</artifactId>
   <packaging>pom</packaging>
   <description>Groot :: BOM</description>
+  <properties>
+    <dep.lombok.version>1.18.20</dep.lombok.version>
+    <dep.minio.version>8.2.2</dep.minio.version>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${dep.lombok.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.minio</groupId>
+        <artifactId>minio</artifactId>
+        <version>${dep.minio.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-minio</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

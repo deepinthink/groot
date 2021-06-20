@@ -51,7 +51,9 @@
   </properties>
   <modules>
     <module>groot-bom</module>
+    <module>groot-minio</module>
     <module>groot-parent</module>
+    <module>groot-starters</module>
   </modules>
   <build>
     <plugins>
