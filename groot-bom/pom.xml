@@ -19,6 +19,7 @@
     <dep.aws-java-sdk.version>1.12.9</dep.aws-java-sdk.version>
     <dep.minio.version>8.2.2</dep.minio.version>
     <dep.qcloud-cos-sdk.version>5.6.45</dep.qcloud-cos-sdk.version>
+    <dep.ucloud-us3-sdk.version>2.6.5</dep.ucloud-us3-sdk.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -51,6 +52,11 @@
         <version>${dep.qcloud-cos-sdk.version}</version>
       </dependency>
       <dependency>
+        <groupId>cn.ucloud.ufile</groupId>
+        <artifactId>ufile-client-java</artifactId>
+        <version>${dep.ucloud-us3-sdk.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-aws</artifactId>
         <version>${project.version}</version>
@@ -67,6 +73,11 @@
       </dependency>
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-ucloud</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-starter-aws</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -78,6 +89,11 @@
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-starter-qcloud</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-ucloud</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>
