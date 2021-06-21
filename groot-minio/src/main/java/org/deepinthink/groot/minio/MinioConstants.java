@@ -19,16 +19,14 @@ public final class MinioConstants {
   public static final String PREFIX = "magoko.boot.minio";
 
   public static final String DEFAULT_MINIO_ENDPOINT_ENDPOINT =
-      System.getProperty(PREFIX + ".endpoint.endpoint", "localhost");
-  public static final int DEFAULT_MINIO_ENDPOINT_PORT =
-      Integer.getInteger(PREFIX + ".endpoint.port", 9000);
-  public static final boolean DEFAULT_MINIO_ENDPOINT_SECURE =
-      Boolean.getBoolean(PREFIX + ".endpoint.secure");
+      System.getProperty(PREFIX + ".endpoint.endpoint", "http://localhost:9000");
+  public static final String DEFAULT_MINIO_ENDPOINT_REGION =
+      System.getProperty(PREFIX + ".endpoint.region", "cn-north-1");
 
   public static final String DEFAULT_MINIO_CREDENTIALS_ACCESS_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "minioadmin");
+      System.getProperty(PREFIX + ".credentials.access-key", "minio-admin");
   public static final String DEFAULT_MINIO_CREDENTIALS_SECRET_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "minioadmin");
+      System.getProperty(PREFIX + ".credentials.access-key", "minio-admin");
 
   private MinioConstants() {}
 }

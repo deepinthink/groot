@@ -20,7 +20,7 @@ import io.minio.MinioClient;
 import okhttp3.OkHttpClient;
 import org.deepinthink.groot.minio.MinioClientBuilderCustomizer;
 import org.deepinthink.groot.minio.MinioOkHttpClientBuilderProvider;
-import org.deepinthink.groot.minio.condition.ConditionalOnMinioCredentials;
+import org.deepinthink.groot.minio.condition.ConditionalOnMinio;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
@@ -32,7 +32,7 @@ import org.springframework.context.annotation.Scope;
 
 @SpringBootConfiguration(proxyBeanMethods = false)
 @ConditionalOnClass({MinioClient.class, OkHttpClient.class, MoreObjects.class})
-@ConditionalOnMinioCredentials
+@ConditionalOnMinio
 @EnableConfigurationProperties(MinioProperties.class)
 public class MinioAutoConfiguration {
 
@@ -57,7 +57,8 @@ public class MinioAutoConfiguration {
     MinioClient.Builder builder =
         new MinioClient.Builder()
             .httpClient(provider.get().build())
-            .endpoint(endpoint.getEndpoint(), endpoint.getPort(), endpoint.isSecure())
+            .region(endpoint.getRegion())
+            .endpoint(endpoint.getEndpoint())
             .credentials(credentials.getAccessKey(), credentials.getSecretKey());
     customizers.orderedStream().forEach((customizer) -> customizer.customize(builder));
     return builder;

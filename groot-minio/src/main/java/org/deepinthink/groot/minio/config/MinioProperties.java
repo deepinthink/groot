@@ -15,6 +15,8 @@
  */
 package org.deepinthink.groot.minio.config;
 
+import static org.deepinthink.groot.minio.MinioConstants.*;
+
 import lombok.Data;
 import org.deepinthink.groot.minio.MinioConstants;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -28,14 +30,13 @@ public class MinioProperties {
 
   @Data
   public static class Endpoint {
-    private String endpoint = MinioConstants.DEFAULT_MINIO_ENDPOINT_ENDPOINT;
-    private int port = MinioConstants.DEFAULT_MINIO_ENDPOINT_PORT;
-    private boolean secure = MinioConstants.DEFAULT_MINIO_ENDPOINT_SECURE;
+    private String endpoint = DEFAULT_MINIO_ENDPOINT_ENDPOINT;
+    private String region = DEFAULT_MINIO_ENDPOINT_REGION;
   }
 
   @Data
   public static class Credentials {
-    private String accessKey = MinioConstants.DEFAULT_MINIO_CREDENTIALS_ACCESS_KEY;
-    private String secretKey = MinioConstants.DEFAULT_MINIO_CREDENTIALS_SECRET_KEY;
+    private String accessKey = DEFAULT_MINIO_CREDENTIALS_ACCESS_KEY;
+    private String secretKey = DEFAULT_MINIO_CREDENTIALS_SECRET_KEY;
   }
 }

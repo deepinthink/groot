@@ -26,12 +26,12 @@ import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
-class OnMinioCredentialsCondition extends SpringBootCondition {
+class OnMinioCondition extends SpringBootCondition {
 
   @Override
   public ConditionOutcome getMatchOutcome(
       ConditionContext context, AnnotatedTypeMetadata metadata) {
-    ConditionMessage.Builder builder = ConditionMessage.forCondition("MinIO");
+    ConditionMessage.Builder builder = ConditionMessage.forCondition(ConditionalOnMinio.class);
     try {
       BindResult<Credentials> required =
           Binder.get(context.getEnvironment())
