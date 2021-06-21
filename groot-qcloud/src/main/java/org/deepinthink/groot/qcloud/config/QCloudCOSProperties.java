@@ -15,13 +15,13 @@
  */
 package org.deepinthink.groot.qcloud.config;
 
-import lombok.Data;
-import org.deepinthink.groot.qcloud.QCloudCOSConstants;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
 import static org.deepinthink.groot.qcloud.QCloudCOSConstants.DEFAULT_QCLOUD_COS_CREDENTIALS_ACCESS_KEY;
 import static org.deepinthink.groot.qcloud.QCloudCOSConstants.DEFAULT_QCLOUD_COS_CREDENTIALS_SECRET_KEY;
 import static org.deepinthink.groot.qcloud.QCloudCOSConstants.DEFAULT_QCLOUD_COS_ENDPOINT_REGION;
+
+import lombok.Data;
+import org.deepinthink.groot.qcloud.QCloudCOSConstants;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
 @ConfigurationProperties(prefix = QCloudCOSConstants.PREFIX)
