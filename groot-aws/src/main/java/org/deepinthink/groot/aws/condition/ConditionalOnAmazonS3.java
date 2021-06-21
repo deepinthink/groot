@@ -13,18 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.deepinthink.groot.aws;
+package org.deepinthink.groot.aws.condition;
 
-public final class AmazonS3Constants {
-  public static final String PREFIX = "groot.amazon.s3";
+import java.lang.annotation.*;
+import org.springframework.context.annotation.Conditional;
 
-  public static final String DEFAULT_AMAZON_S3_ENDPOINT_REGION =
-      System.getProperty(PREFIX + ".endpoint.region", "cn-north-1");
-
-  public static final String DEFAULT_AMAZON_S3_CREDENTIALS_ACCESS_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "amazon-s3-admin");
-  public static final String DEFAULT_AMAZON_S3_CREDENTIALS_SECRET_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "amazon-s3-admin");
-
-  private AmazonS3Constants() {}
-}
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Conditional(OnAmazonS3Condition.class)
+public @interface ConditionalOnAmazonS3 {}

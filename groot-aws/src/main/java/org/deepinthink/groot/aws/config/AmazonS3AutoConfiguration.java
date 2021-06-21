@@ -18,12 +18,12 @@ package org.deepinthink.groot.aws.config;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.google.common.base.MoreObjects;
 import org.deepinthink.groot.aws.AmazonS3ClientBuilderCustomizer;
 import org.deepinthink.groot.aws.AmazonS3ClientConfigurationProvider;
+import org.deepinthink.groot.aws.condition.ConditionalOnAmazonS3;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
@@ -35,6 +35,7 @@ import org.springframework.context.annotation.Scope;
 
 @SpringBootConfiguration(proxyBeanMethods = false)
 @ConditionalOnClass({AmazonS3.class, MoreObjects.class})
+@ConditionalOnAmazonS3
 @EnableConfigurationProperties(AmazonS3Properties.class)
 public class AmazonS3AutoConfiguration {
 
@@ -64,9 +65,8 @@ public class AmazonS3AutoConfiguration {
     AmazonS3Properties.Credentials credentials = properties.getCredentials();
     AmazonS3ClientBuilder builder =
         AmazonS3ClientBuilder.standard()
+            .withRegion(endpoint.getRegion())
             .withClientConfiguration(provider.get())
-            .withEndpointConfiguration(
-                new EndpointConfiguration(endpoint.getEndpoint(), endpoint.getRegion()))
             .withCredentials(
                 new AWSStaticCredentialsProvider(
                     new BasicAWSCredentials(
