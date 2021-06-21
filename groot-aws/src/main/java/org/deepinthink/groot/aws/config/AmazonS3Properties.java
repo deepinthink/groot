@@ -27,7 +27,6 @@ public class AmazonS3Properties {
 
   @Data
   public static class Endpoint {
-    private String endpoint;
     private String region;
   }
 
