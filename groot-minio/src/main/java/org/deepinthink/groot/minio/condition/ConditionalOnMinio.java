@@ -21,5 +21,5 @@ import org.springframework.context.annotation.Conditional;
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Conditional(OnMinioCredentialsCondition.class)
-public @interface ConditionalOnMinioCredentials {}
+@Conditional(OnMinioCondition.class)
+public @interface ConditionalOnMinio {}
