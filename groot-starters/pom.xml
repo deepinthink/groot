@@ -16,5 +16,6 @@
   <modules>
     <module>groot-starter-aws</module>
     <module>groot-starter-minio</module>
+    <module>groot-starter-qcloud</module>
   </modules>
 </project>
