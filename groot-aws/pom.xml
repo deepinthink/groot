@@ -6,21 +6,18 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.deepinthink.groot</groupId>
-    <artifactId>groot-starters</artifactId>
+    <artifactId>groot-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
+    <relativePath>../groot-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>groot-starter-minio</artifactId>
+  <artifactId>groot-aws</artifactId>
   <packaging>jar</packaging>
-  <description>Groot Starter :: MinIO</description>
+  <description>Groot :: AWS</description>
   <dependencies>
-    <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-minio</artifactId>
-    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -28,8 +25,14 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>io.minio</groupId>
-      <artifactId>minio</artifactId>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-s3</artifactId>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 </project>

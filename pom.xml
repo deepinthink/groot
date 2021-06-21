@@ -50,6 +50,7 @@
     </parameter.license-header.location>
   </properties>
   <modules>
+    <module>groot-aws</module>
     <module>groot-bom</module>
     <module>groot-minio</module>
     <module>groot-parent</module>

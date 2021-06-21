@@ -15,6 +15,8 @@
   <description>Groot :: BOM</description>
   <properties>
     <dep.lombok.version>1.18.20</dep.lombok.version>
+    <dep.guava.version>30.0-jre</dep.guava.version>
+    <dep.aws-java-sdk.version>1.12.9</dep.aws-java-sdk.version>
     <dep.minio.version>8.2.2</dep.minio.version>
   </properties>
   <dependencyManagement>
@@ -26,9 +28,36 @@
         <scope>provided</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${dep.guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-java-sdk-bom</artifactId>
+        <version>${dep.aws-java-sdk.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>io.minio</groupId>
         <artifactId>minio</artifactId>
         <version>${dep.minio.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-aws</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-minio</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-aws</artifactId>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.deepinthink.groot</groupId>

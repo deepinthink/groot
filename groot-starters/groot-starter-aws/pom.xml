@@ -10,13 +10,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-  <artifactId>groot-starter-minio</artifactId>
+  <artifactId>groot-starter-aws</artifactId>
   <packaging>jar</packaging>
-  <description>Groot Starter :: MinIO</description>
+  <description>Groot Starter :: AWS</description>
   <dependencies>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-minio</artifactId>
+      <artifactId>groot-aws</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -28,8 +28,12 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>io.minio</groupId>
-      <artifactId>minio</artifactId>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-s3</artifactId>
     </dependency>
   </dependencies>
 </project>
