@@ -18,6 +18,7 @@
     <dep.guava.version>30.0-jre</dep.guava.version>
     <dep.aws-java-sdk.version>1.12.9</dep.aws-java-sdk.version>
     <dep.minio.version>8.2.2</dep.minio.version>
+    <dep.qcloud-cos-sdk.version>5.6.45</dep.qcloud-cos-sdk.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -45,6 +46,11 @@
         <version>${dep.minio.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.qcloud</groupId>
+        <artifactId>cos_api</artifactId>
+        <version>${dep.qcloud-cos-sdk.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-aws</artifactId>
         <version>${project.version}</version>
@@ -56,12 +62,22 @@
       </dependency>
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-qcloud</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-starter-aws</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-starter-minio</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-qcloud</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>

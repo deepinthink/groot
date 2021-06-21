@@ -54,6 +54,7 @@
     <module>groot-bom</module>
     <module>groot-minio</module>
     <module>groot-parent</module>
+    <module>groot-qcloud</module>
     <module>groot-starters</module>
   </modules>
   <build>
