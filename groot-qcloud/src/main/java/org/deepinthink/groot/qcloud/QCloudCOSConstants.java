@@ -21,10 +21,5 @@ public final class QCloudCOSConstants {
   public static final String DEFAULT_QCLOUD_COS_ENDPOINT_REGION =
       System.getProperty(PREFIX + ".endpoint.region", "ap-guangzhou");
 
-  public static final String DEFAULT_QCLOUD_COS_CREDENTIALS_ACCESS_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "qcloud-cos-admin");
-  public static final String DEFAULT_QCLOUD_COS_CREDENTIALS_SECRET_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "qcloud-cos-admin");
-
   private QCloudCOSConstants() {}
 }
