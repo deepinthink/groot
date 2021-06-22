@@ -26,6 +26,7 @@ import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
+import org.springframework.util.StringUtils;
 
 class OnUCloudUFileCondition extends SpringBootCondition {
 
@@ -46,7 +47,14 @@ class OnUCloudUFileCondition extends SpringBootCondition {
                   UCloudUFileConstants.PREFIX + ".object-local-authorization",
                   ObjectLocalAuthorization.class);
       if (bucketRequired.isBound() && objectRequired.isBound()) {
-        return ConditionOutcome.match();
+        BucketLocalAuthorization bucketAuth = bucketRequired.get();
+        ObjectLocalAuthorization objectAuth = objectRequired.get();
+        if (StringUtils.hasLength(bucketAuth.getPublicKey())
+            && StringUtils.hasLength(bucketAuth.getPrivateKey())
+            && StringUtils.hasLength(objectAuth.getPublicKey())
+            && StringUtils.hasLength(objectAuth.getPrivateKey())) {
+          return ConditionOutcome.match();
+        }
       }
     } catch (BindException ignored) {
     }
