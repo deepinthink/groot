@@ -15,8 +15,6 @@
  */
 package org.deepinthink.groot.qcloud.config;
 
-import static org.deepinthink.groot.qcloud.QCloudCOSConstants.DEFAULT_QCLOUD_COS_CREDENTIALS_ACCESS_KEY;
-import static org.deepinthink.groot.qcloud.QCloudCOSConstants.DEFAULT_QCLOUD_COS_CREDENTIALS_SECRET_KEY;
 import static org.deepinthink.groot.qcloud.QCloudCOSConstants.DEFAULT_QCLOUD_COS_ENDPOINT_REGION;
 
 import lombok.Data;
@@ -26,7 +24,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 @ConfigurationProperties(prefix = QCloudCOSConstants.PREFIX)
 public class QCloudCOSProperties {
-
   private final Endpoint endpoint = new Endpoint();
   private final Credentials credentials = new Credentials();
 
@@ -37,7 +34,7 @@ public class QCloudCOSProperties {
 
   @Data
   public static class Credentials {
-    private String accessKey = DEFAULT_QCLOUD_COS_CREDENTIALS_ACCESS_KEY;
-    private String secretKey = DEFAULT_QCLOUD_COS_CREDENTIALS_SECRET_KEY;
+    private String accessKey;
+    private String secretKey;
   }
 }

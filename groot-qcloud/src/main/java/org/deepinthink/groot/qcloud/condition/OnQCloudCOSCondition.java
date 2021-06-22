@@ -17,7 +17,6 @@ package org.deepinthink.groot.qcloud.condition;
 
 import org.deepinthink.groot.qcloud.QCloudCOSConstants;
 import org.deepinthink.groot.qcloud.config.QCloudCOSProperties.Credentials;
-import org.deepinthink.groot.qcloud.config.QCloudCOSProperties.Endpoint;
 import org.springframework.boot.autoconfigure.condition.ConditionMessage;
 import org.springframework.boot.autoconfigure.condition.ConditionOutcome;
 import org.springframework.boot.autoconfigure.condition.SpringBootCondition;
@@ -26,6 +25,7 @@ import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
+import org.springframework.util.StringUtils;
 
 public class OnQCloudCOSCondition extends SpringBootCondition {
 
@@ -34,17 +34,18 @@ public class OnQCloudCOSCondition extends SpringBootCondition {
       ConditionContext context, AnnotatedTypeMetadata metadata) {
     ConditionMessage.Builder builder = ConditionMessage.forCondition(ConditionOnQCloudCOS.class);
     try {
-      BindResult<Endpoint> endpointRequired =
-          Binder.get(context.getEnvironment())
-              .bind(QCloudCOSConstants.PREFIX + ".endpoint", Endpoint.class);
-      BindResult<Credentials> credentialsRequired =
+      BindResult<Credentials> required =
           Binder.get(context.getEnvironment())
               .bind(QCloudCOSConstants.PREFIX + ".credentials", Credentials.class);
-      if (endpointRequired.isBound() && credentialsRequired.isBound()) {
-        return ConditionOutcome.match();
+      if (required.isBound()) {
+        Credentials credentials = required.get();
+        if (StringUtils.hasLength(credentials.getAccessKey())
+            && StringUtils.hasLength(credentials.getSecretKey())) {
+          return ConditionOutcome.match();
+        }
       }
     } catch (BindException ignored) {
     }
-    return ConditionOutcome.noMatch(builder.because("Missing Endpoint or Credentials"));
+    return ConditionOutcome.noMatch(builder.because("Missing Credentials"));
   }
 }
