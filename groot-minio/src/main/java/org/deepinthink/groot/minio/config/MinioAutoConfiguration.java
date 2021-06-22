@@ -40,7 +40,11 @@ public class MinioAutoConfiguration {
   @ConditionalOnMissingBean
   public MinioOkHttpClientBuilderProvider minioOkHttpClientBuilderProvider(
       @Autowired(required = false) OkHttpClient.Builder builder) {
-    return () -> MoreObjects.firstNonNull(builder, new OkHttpClient.Builder());
+    return () -> MoreObjects.firstNonNull(builder, minioOkHttpClientBuilder());
+  }
+
+  private OkHttpClient.Builder minioOkHttpClientBuilder() {
+    return new OkHttpClient.Builder();
   }
 
   @Bean
@@ -51,7 +55,7 @@ public class MinioAutoConfiguration {
       ObjectProvider<MinioOkHttpClientBuilderProvider> providers,
       ObjectProvider<MinioClientBuilderCustomizer> customizers) {
     MinioOkHttpClientBuilderProvider provider =
-        providers.getIfAvailable(() -> OkHttpClient.Builder::new);
+        providers.getIfAvailable(() -> this::minioOkHttpClientBuilder);
     MinioProperties.Endpoint endpoint = properties.getEndpoint();
     MinioProperties.Credentials credentials = properties.getCredentials();
     MinioClient.Builder builder =
