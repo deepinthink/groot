@@ -15,13 +15,20 @@
   <description>Groot Starter :: OSS</description>
   <dependencies>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-aws</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <scope>provided</scope>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-minio</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-qcloud</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-ucloud</artifactId>
     </dependency>
   </dependencies>
 </project>

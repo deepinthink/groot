@@ -68,6 +68,11 @@
       </dependency>
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-oss</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-qcloud</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -84,6 +89,11 @@
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-starter-minio</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-oss</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
