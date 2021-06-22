@@ -14,6 +14,7 @@
   <packaging>pom</packaging>
   <description>Groot :: Starters</description>
   <modules>
+    <module>groot-starter-aliyun</module>
     <module>groot-starter-aws</module>
     <module>groot-starter-minio</module>
     <module>groot-starter-oss</module>

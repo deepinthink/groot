@@ -6,33 +6,37 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.deepinthink.groot</groupId>
-    <artifactId>groot-starters</artifactId>
+    <artifactId>groot-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
+    <relativePath>../groot-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>groot-starter-oss</artifactId>
+  <artifactId>groot-aliyun</artifactId>
   <packaging>jar</packaging>
-  <description>Groot Starter :: OSS</description>
+  <description>Groot :: Aliyun</description>
   <dependencies>
     <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-aliyun</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-aws</artifactId>
+      <artifactId>groot-oss</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-minio</artifactId>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-qcloud</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-ucloud</artifactId>
+      <groupId>com.aliyun.oss</groupId>
+      <artifactId>aliyun-sdk-oss</artifactId>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 </project>
