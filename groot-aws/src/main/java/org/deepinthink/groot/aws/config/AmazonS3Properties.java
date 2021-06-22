@@ -15,6 +15,8 @@
  */
 package org.deepinthink.groot.aws.config;
 
+import static org.deepinthink.groot.aws.AmazonS3Constants.DEFAULT_AMAZON_S3_ENDPOINT_REGION;
+
 import lombok.Data;
 import org.deepinthink.groot.aws.AmazonS3Constants;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -27,7 +29,7 @@ public class AmazonS3Properties {
 
   @Data
   public static class Endpoint {
-    private String region;
+    private String region = DEFAULT_AMAZON_S3_ENDPOINT_REGION;
   }
 
   @Data

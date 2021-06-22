@@ -21,10 +21,5 @@ public final class AmazonS3Constants {
   public static final String DEFAULT_AMAZON_S3_ENDPOINT_REGION =
       System.getProperty(PREFIX + ".endpoint.region", "cn-north-1");
 
-  public static final String DEFAULT_AMAZON_S3_CREDENTIALS_ACCESS_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "amazon-s3-admin");
-  public static final String DEFAULT_AMAZON_S3_CREDENTIALS_SECRET_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "amazon-s3-admin");
-
   private AmazonS3Constants() {}
 }
