@@ -10,14 +10,19 @@
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../groot-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>groot-starters</artifactId>
-  <packaging>pom</packaging>
-  <description>Groot :: Starters</description>
-  <modules>
-    <module>groot-starter-aws</module>
-    <module>groot-starter-minio</module>
-    <module>groot-starter-oss</module>
-    <module>groot-starter-qcloud</module>
-    <module>groot-starter-ucloud</module>
-  </modules>
+  <artifactId>groot-oss</artifactId>
+  <packaging>jar</packaging>
+  <description>Groot :: OSS</description>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
