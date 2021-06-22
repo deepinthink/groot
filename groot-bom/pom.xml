@@ -16,6 +16,7 @@
   <properties>
     <dep.lombok.version>1.18.20</dep.lombok.version>
     <dep.guava.version>30.0-jre</dep.guava.version>
+    <dep.aliyun-sdk-oss.version>3.8.0</dep.aliyun-sdk-oss.version>
     <dep.aws-java-sdk.version>1.12.9</dep.aws-java-sdk.version>
     <dep.minio.version>8.2.2</dep.minio.version>
     <dep.qcloud-cos-sdk.version>5.6.45</dep.qcloud-cos-sdk.version>
@@ -33,6 +34,11 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>${dep.guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.aliyun.oss</groupId>
+        <artifactId>aliyun-sdk-oss</artifactId>
+        <version>${dep.aliyun-sdk-oss.version}</version>
       </dependency>
       <dependency>
         <groupId>com.amazonaws</groupId>
@@ -58,6 +64,11 @@
       </dependency>
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-aliyun</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-aws</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -79,6 +90,11 @@
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-ucloud</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-aliyun</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
