@@ -18,6 +18,7 @@
     <dep.guava.version>30.0-jre</dep.guava.version>
     <dep.aliyun-sdk-oss.version>3.8.0</dep.aliyun-sdk-oss.version>
     <dep.aws-java-sdk.version>1.12.9</dep.aws-java-sdk.version>
+    <dep.gcloud.version>20.6.0</dep.gcloud.version>
     <dep.minio.version>8.2.2</dep.minio.version>
     <dep.qcloud-cos-sdk.version>5.6.45</dep.qcloud-cos-sdk.version>
     <dep.ucloud-us3-sdk.version>2.6.5</dep.ucloud-us3-sdk.version>
@@ -48,6 +49,13 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>${dep.gcloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>io.minio</groupId>
         <artifactId>minio</artifactId>
         <version>${dep.minio.version}</version>
@@ -70,6 +78,11 @@
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-aws</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-gcloud</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -100,6 +113,11 @@
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-starter-aws</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-gcloud</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>

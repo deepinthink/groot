@@ -10,33 +10,30 @@
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-  <artifactId>groot-starter-oss</artifactId>
+  <artifactId>groot-starter-gcloud</artifactId>
   <packaging>jar</packaging>
-  <description>Groot Starter :: OSS</description>
+  <description>Groot Starter :: GCloud</description>
   <dependencies>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-aliyun</artifactId>
+      <artifactId>groot-gcloud</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-aws</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-gcloud</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-minio</artifactId>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-qcloud</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.deepinthink.groot</groupId>
-      <artifactId>groot-starter-ucloud</artifactId>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
     </dependency>
   </dependencies>
 </project>
