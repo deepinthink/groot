@@ -17,7 +17,6 @@ package org.deepinthink.groot.aws.condition;
 
 import org.deepinthink.groot.aws.AmazonS3Constants;
 import org.deepinthink.groot.aws.config.AmazonS3Properties.Credentials;
-import org.deepinthink.groot.aws.config.AmazonS3Properties.Endpoint;
 import org.springframework.boot.autoconfigure.condition.ConditionMessage;
 import org.springframework.boot.autoconfigure.condition.ConditionOutcome;
 import org.springframework.boot.autoconfigure.condition.SpringBootCondition;
@@ -26,6 +25,7 @@ import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
+import org.springframework.util.StringUtils;
 
 class OnAmazonS3Condition extends SpringBootCondition {
   @Override
@@ -33,17 +33,18 @@ class OnAmazonS3Condition extends SpringBootCondition {
       ConditionContext context, AnnotatedTypeMetadata metadata) {
     ConditionMessage.Builder builder = ConditionMessage.forCondition(ConditionalOnAmazonS3.class);
     try {
-      BindResult<Endpoint> endpointRequired =
-          Binder.get(context.getEnvironment())
-              .bind(AmazonS3Constants.PREFIX + ".endpoint", Endpoint.class);
-      BindResult<Credentials> credentialsRequired =
+      BindResult<Credentials> required =
           Binder.get(context.getEnvironment())
               .bind(AmazonS3Constants.PREFIX + ".credentials", Credentials.class);
-      if (endpointRequired.isBound() && credentialsRequired.isBound()) {
-        return ConditionOutcome.match();
+      if (required.isBound()) {
+        Credentials credentials = required.get();
+        if (StringUtils.hasLength(credentials.getAccessKey())
+            && StringUtils.hasLength(credentials.getSecretKey())) {
+          return ConditionOutcome.match();
+        }
       }
     } catch (BindException ignored) {
     }
-    return ConditionOutcome.noMatch(builder.because("Missing Endpoint or Credentials"));
+    return ConditionOutcome.noMatch(builder.because("Missing Credentials"));
   }
 }
