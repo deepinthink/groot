@@ -53,6 +53,7 @@
     <module>groot-aws</module>
     <module>groot-bom</module>
     <module>groot-minio</module>
+    <module>groot-oss</module>
     <module>groot-parent</module>
     <module>groot-qcloud</module>
     <module>groot-starters</module>
