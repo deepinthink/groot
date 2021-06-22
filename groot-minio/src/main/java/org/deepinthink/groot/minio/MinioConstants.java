@@ -23,10 +23,5 @@ public final class MinioConstants {
   public static final String DEFAULT_MINIO_ENDPOINT_REGION =
       System.getProperty(PREFIX + ".endpoint.region", "cn-north-1");
 
-  public static final String DEFAULT_MINIO_CREDENTIALS_ACCESS_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "minio-admin");
-  public static final String DEFAULT_MINIO_CREDENTIALS_SECRET_KEY =
-      System.getProperty(PREFIX + ".credentials.access-key", "minio-admin");
-
   private MinioConstants() {}
 }

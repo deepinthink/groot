@@ -25,6 +25,7 @@ import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
+import org.springframework.util.StringUtils;
 
 class OnMinioCondition extends SpringBootCondition {
 
@@ -37,11 +38,15 @@ class OnMinioCondition extends SpringBootCondition {
           Binder.get(context.getEnvironment())
               .bind(MinioConstants.PREFIX + ".credentials", Credentials.class);
       if (required.isBound()) {
-        return ConditionOutcome.match();
+        Credentials credentials = required.get();
+        if (StringUtils.hasLength(credentials.getAccessKey())
+            && StringUtils.hasLength(credentials.getSecretKey())) {
+          return ConditionOutcome.match();
+        }
       }
 
     } catch (BindException ignored) {
     }
-    return ConditionOutcome.noMatch(builder.because("credentials not found"));
+    return ConditionOutcome.noMatch(builder.because("Missing Credentials"));
   }
 }
