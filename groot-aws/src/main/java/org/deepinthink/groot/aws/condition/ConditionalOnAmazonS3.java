@@ -16,10 +16,13 @@
 package org.deepinthink.groot.aws.condition;
 
 import java.lang.annotation.*;
+import org.deepinthink.groot.oss.condition.ConditionalOnOSSDriver;
+import org.deepinthink.groot.oss.config.OSSProperties.OSSDriver;
 import org.springframework.context.annotation.Conditional;
 
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
+@ConditionalOnOSSDriver(OSSDriver.AMAZON_S3)
 @Conditional(OnAmazonS3Condition.class)
 public @interface ConditionalOnAmazonS3 {}

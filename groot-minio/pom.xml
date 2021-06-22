@@ -25,6 +25,10 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-oss</artifactId>
+    </dependency>
+    <dependency>
       <groupId>io.minio</groupId>
       <artifactId>minio</artifactId>
       <optional>true</optional>
