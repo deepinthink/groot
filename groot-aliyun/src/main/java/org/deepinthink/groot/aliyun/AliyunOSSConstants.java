@@ -18,5 +18,8 @@ package org.deepinthink.groot.aliyun;
 public final class AliyunOSSConstants {
   public static final String PREFIX = "groot.aliyun.oss";
 
+  public static final String DEFAULT_ALIYUN_OSS_ENDPOINT_ENDPOINT =
+      System.getProperty(PREFIX + ".endpoint.endpoint", "http://oss-cn-hangzhou.aliyuncs.com");
+
   private AliyunOSSConstants() {}
 }
