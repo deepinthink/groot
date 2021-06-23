@@ -15,6 +15,8 @@
  */
 package org.deepinthink.groot.gcloud.config;
 
+import static org.deepinthink.groot.gcloud.GCloudStorageConstants.DEFAULT_GCLOUD_STORAGE_CREDENTIALS;
+
 import lombok.Data;
 import org.deepinthink.groot.gcloud.GCloudStorageConstants;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -23,5 +25,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = GCloudStorageConstants.PREFIX)
 public class GCloudStorageProperties {
   private String projectId;
-  private String credentials;
+  private String credentials = DEFAULT_GCLOUD_STORAGE_CREDENTIALS;
 }
