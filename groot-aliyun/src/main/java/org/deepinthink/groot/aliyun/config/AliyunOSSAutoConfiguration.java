@@ -31,7 +31,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
 @SpringBootConfiguration(proxyBeanMethods = false)
-@ConditionalOnClass(OSS.class)
+@ConditionalOnClass({OSS.class, MoreObjects.class})
 @ConditionalOnAliyunOSS
 @EnableConfigurationProperties(AliyunOSSProperties.class)
 public class AliyunOSSAutoConfiguration {
