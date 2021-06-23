@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.deepinthink.groot.gcloud.config;
+package org.deepinthink.groot.gcloud;
 
-import lombok.Data;
-import org.deepinthink.groot.gcloud.GCloudStorageConstants;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+public final class GCloudStorageConstants {
+  public static final String PREFIX = "groot.gcloud.storage";
 
-@Data
-@ConfigurationProperties(prefix = GCloudStorageConstants.PREFIX)
-public class GCloudStorageProperties {
-  private String projectId;
-  private String credentials;
+  public static final String DEFAULT_GCLOUD_STORAGE_CREDENTIALS =
+      System.getProperty(PREFIX + ".credentials", "/etc/gcloud-storage.json");
+
+  private GCloudStorageConstants() {}
 }

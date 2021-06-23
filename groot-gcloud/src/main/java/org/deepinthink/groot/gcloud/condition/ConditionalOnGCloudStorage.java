@@ -13,10 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.deepinthink.groot.gcloud;
+package org.deepinthink.groot.gcloud.condition;
 
-public final class GCloudConstants {
-  public static final String PREFIX = "groot.gcloud.storage";
+import java.lang.annotation.*;
+import org.deepinthink.groot.oss.condition.ConditionalOnOSSDriver;
+import org.deepinthink.groot.oss.config.OSSProperties.OSSDriver;
+import org.springframework.context.annotation.Conditional;
 
-  private GCloudConstants() {}
-}
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@ConditionalOnOSSDriver(OSSDriver.GCLOUD_STORAGE)
+@Conditional(OnGCloudStorageCondition.class)
+public @interface ConditionalOnGCloudStorage {}
