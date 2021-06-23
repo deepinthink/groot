@@ -15,10 +15,29 @@
  */
 package org.deepinthink.groot.aliyun.config;
 
+import static org.deepinthink.groot.aliyun.AliyunOSSConstants.DEFAULT_ALIYUN_OSS_ENDPOINT_ENDPOINT;
+
 import lombok.Data;
 import org.deepinthink.groot.aliyun.AliyunOSSConstants;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
 @ConfigurationProperties(prefix = AliyunOSSConstants.PREFIX)
-public class AliyunOSSProperties {}
+public class AliyunOSSProperties {
+
+  private final Endpoint endpoint = new Endpoint();
+
+  private final Credentials credentials = new Credentials();
+
+  @Data
+  public static class Endpoint {
+    private String endpoint = DEFAULT_ALIYUN_OSS_ENDPOINT_ENDPOINT;
+  }
+
+  @Data
+  public static class Credentials {
+    private String accessKey;
+    private String secretKey;
+    private String secretToken;
+  }
+}
