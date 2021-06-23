@@ -30,6 +30,7 @@ public class OSSProperties {
   public enum OSSDriver {
     ALIYUN_OSS,
     AMAZON_S3,
+    GCLOUD_STORAGE,
     MINIO,
     QCLOUD_COS,
     UCLOUD_UFILE
