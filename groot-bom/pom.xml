@@ -82,6 +82,11 @@
       </dependency>
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-aws-v2</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-gcloud</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -113,6 +118,11 @@
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-starter-aws</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-aws-v2</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
