@@ -13,27 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.deepinthink.groot.oss.config;
+package org.deepinthink.groot.aws.v2;
 
-import static org.deepinthink.groot.oss.OSSConstants.DEFAULT_OSS_DRIVER;
+public final class AmazonS3Constants {
+  public static final String PREFIX = "groot.amazon.s3.v2";
 
-import lombok.Data;
-import org.deepinthink.groot.oss.OSSConstants;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
-@Data
-@ConfigurationProperties(prefix = OSSConstants.PREFIX)
-public class OSSProperties {
-
-  private OSSDriver driver = DEFAULT_OSS_DRIVER;
-
-  public enum OSSDriver {
-    ALIYUN_OSS,
-    AMAZON_S3,
-    AMAZON_S3_V2,
-    GCLOUD_STORAGE,
-    MINIO,
-    QCLOUD_COS,
-    UCLOUD_UFILE
-  }
+  private AmazonS3Constants() {}
 }

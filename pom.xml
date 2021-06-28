@@ -52,6 +52,7 @@
   <modules>
     <module>groot-aliyun</module>
     <module>groot-aws</module>
+    <module>groot-aws-v2</module>
     <module>groot-bom</module>
     <module>groot-gcloud</module>
     <module>groot-minio</module>
