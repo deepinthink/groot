@@ -20,6 +20,7 @@
     <module>groot-starter-gcloud</module>
     <module>groot-starter-minio</module>
     <module>groot-starter-oss</module>
+    <module>groot-starter-oss-all</module>
     <module>groot-starter-qcloud</module>
     <module>groot-starter-ucloud</module>
   </modules>

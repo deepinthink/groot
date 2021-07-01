@@ -16,13 +16,10 @@
 package org.deepinthink.groot.ucloud.condition;
 
 import java.lang.annotation.*;
-import org.deepinthink.groot.oss.condition.ConditionalOnOSSDriver;
-import org.deepinthink.groot.oss.config.OSSProperties.OSSDriver;
 import org.springframework.context.annotation.Conditional;
 
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@ConditionalOnOSSDriver(OSSDriver.UCLOUD_UFILE)
 @Conditional(OnUCloudUFileCondition.class)
 public @interface ConditionalOnUCloudUFile {}

@@ -16,11 +16,19 @@
   <dependencies>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-oss</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-starter-aliyun</artifactId>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-starter-aws</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-aws-v2</artifactId>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>

@@ -142,6 +142,11 @@
       </dependency>
       <dependency>
         <groupId>org.deepinthink.groot</groupId>
+        <artifactId>groot-starter-oss-all</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.groot</groupId>
         <artifactId>groot-starter-qcloud</artifactId>
         <version>${project.version}</version>
       </dependency>
