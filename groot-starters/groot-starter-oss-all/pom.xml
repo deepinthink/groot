@@ -22,5 +22,29 @@
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-starter-minio</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-aliyun</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-aws</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-gcloud</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-minio</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-qcloud</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-ucloud</artifactId>
+    </dependency>
   </dependencies>
 </project>
