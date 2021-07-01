@@ -32,6 +32,10 @@
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
+      <artifactId>groot-starter-aws-v2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-starter-gcloud</artifactId>
     </dependency>
     <dependency>

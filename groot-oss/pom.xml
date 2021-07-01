@@ -27,37 +27,30 @@
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-aliyun</artifactId>
-      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-aws</artifactId>
-      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-aws-v2</artifactId>
-      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-gcloud</artifactId>
-      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-minio</artifactId>
-      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-qcloud</artifactId>
-      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.deepinthink.groot</groupId>
       <artifactId>groot-ucloud</artifactId>
-      <optional>true</optional>
     </dependency>
   </dependencies>
 </project>
